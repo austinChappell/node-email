@@ -3,6 +3,8 @@ const express = require('express'),
 
 port = process.env.PORT || 3000;
 
+app.use(express.static('public'));
+
 app.post('/email', (req, res) => {
   var helper = require('sendgrid').mail;
   var fromEmail = new helper.Email('test@example.com');
